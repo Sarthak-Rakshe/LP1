@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-Friendly Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%; /* Adjust the width of the form container */
+            max-width: 600px; /* Set a maximum width */
+            margin: auto; /* Center the container horizontally */
+        }
+
+        .registration-form {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: block; /* Use block to ensure elements are displayed correctly */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="registration-form" onsubmit="return validateForm()">
+            <h2>Registration Form</h2>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="middlename">Middle Name:</label>
+                <input type="text" id="middlename" name="middlename">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10 digit mobile number" required>
+                <!-- Add pattern attribute for specific format -->
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" required>
+                <!-- Consider using a dropdown or auto-suggest for states -->
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="Ind">India</option>
+                    <option value="usa">United States</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            /* Your validation code goes here */
+
+            /* ... */
+
+            return true; // Return true if the form is valid
+        }
+    </script>
+</body>
+</html>
+
